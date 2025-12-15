@@ -1,0 +1,120 @@
+---
+title: Getting Started with best Documentation
+description: Quick guide to set up your first documentation space and begin managing your project docs.
+---
+
+## Overview
+
+Set up your best Documentation space in minutes. Follow these steps to create an account, build your first documentation site, and upload content. You gain full control over organizing project docs with Markdown and MDX support.
+
+<Callout kind="tip">
+  Use your brand color `{`#3B82F6`}` in themes for a custom look.
+</Callout>
+
+## Create Your Account and Log In
+
+Start by signing up on the best Documentation platform.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit `https://app.bestdocs.com/signup` and enter your email, name, and password.
+    
+    Verify your email to activate the account.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Go to `https://app.bestdocs.com/login`.
+    
+    Enter your credentials. Enable two-factor authentication for security.
+  </Step>
+</Steps>
+
+## Set Up Your First Documentation Space
+
+Create a dedicated space for your project.
+
+<Steps>
+  <Step title="New Space" icon="plus">
+    Click **New Space** in the dashboard.
+    
+    Name it, e.g., `MyProjectDocs`, and select a template like "API Reference".
+  </Step>
+  <Step title="Configure Settings" icon="settings">
+    Set your space slug to `myprojectdocs`.
+    
+    Upload a logo and apply brand color `#3B82F6`.
+  </Step>
+</Steps>
+
+## Upload Initial Content
+
+Add your first pages using Markdown or MDX files.
+
+<Tabs>
+  <Tab title="Web Editor" icon="edit-3">
+    In your space, click **New Page**.
+    
+    Use the built-in editor to write:
+    
+    ```
+    ## Welcome
+    
+    This is your first doc page.
+    ```
+    
+    Publish to make it live.
+  </Tab>
+  <Tab title="Git Sync" icon="git-branch">
+    Connect your GitHub repo.
+    
+    Push MDX files to `/docs` folder.
+    
+    Changes sync automatically.
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="MDX,Markdown">
+```mdx
+---
+title: API Overview
+description: Core endpoints and usage.
+---
+
+## Endpoints
+
+Use `{`/api/v1/users`}` for user management.
+```
+```markdown
+# API Overview
+
+## Endpoints
+
+Use `/api/v1/users` for user management.
+```
+</CodeGroup>
+
+## Basic Navigation Tips
+
+Master the interface quickly.
+
+<Columns cols={2}>
+  <Card title="Sidebar" icon="menu" href="#">
+    Access spaces, pages, and settings.
+  </Card>
+  <Card title="Search" icon="search" href="#">
+    Find content across your docs.
+  </Card>
+  <Card title="Preview" icon="eye" href="#">
+    Live preview changes before publishing.
+  </Card>
+  <Card title="Versions" icon="git-commit" href="#">
+    Track and rollback page versions.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced Navigation" default-open="false">
+  Use keyboard shortcuts: `<kbd>Ctrl</kbd>+<kbd>K</kbd>` for search, `<kbd>Ctrl</kbd>+<kbd>S</kbd>` to save.
+</Expandable>
+
+<Callout kind="success">
+  Your space is now ready! Explore integrations next.
+</Callout>

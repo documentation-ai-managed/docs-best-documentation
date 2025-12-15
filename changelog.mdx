@@ -1,0 +1,158 @@
+---
+title: Changelog
+description: History of updates and new features released for best Documentation.
+---
+
+## Recent Highlights
+
+Stay informed about the latest improvements in best Documentation. You can view changes by version, filter by tags like breaking changes or new features, and follow upgrade instructions.
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v1-2-0">
+    Enhanced editing with real-time collaboration and new components.
+  </Card>
+  <Card title="v1.1.0" icon="trending-up" href="#v1-1-0">
+    Performance boosts and dark mode support.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v1-0-0">
+    Initial stable release with core documentation features.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Breaking changes are tagged with `{"breaking"}`. Review migration guides before upgrading.
+</Callout>
+
+## Upgrade Process
+
+Follow these steps to upgrade your best Documentation instance safely.
+
+<Steps>
+  <Step title="Backup Your Data" icon="database">
+    Create a full backup of your documentation site and database.
+  </Step>
+  <Step title="Review Changes" icon="book-open">
+    Check the relevant changelog section for your target version.
+  </Step>
+  <Step title="Update Package" icon="package">
+    <Tabs>
+      <Tab title="npm" icon="package">
+        ```bash
+        npm install best-documentation@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="package">
+        ```bash
+        yarn add best-documentation@latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Run Migrations" icon="play">
+    ```bash
+    npm run migrate
+    ```
+  </Step>
+  <Step title="Test Locally" icon="check-circle">
+    Verify all pages render correctly.
+  </Step>
+</Steps>
+
+## Update History
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for multi-user editing
+- Introduced `<Video>` and `<Iframe>` components for rich media embeds
+- New `<Columns>` layout for responsive feature grids
+
+## Improvements
+
+- Faster page rendering with optimized MDX parsing
+- Better search indexing for documentation content
+
+## Bug Fixes
+
+- Fixed parsing errors with nested code blocks
+- Resolved icon rendering issues in dark mode
+
+**Example Usage of New Columns Component:**
+
+<CodeGroup tabs="MDX,React">
+  ```mdx
+  <Columns cols={3}>
+    <Card title="Feature 1" icon="star" />
+    <Card title="Feature 2" icon="heart" />
+  </Columns>
+  ```
+  ```jsx
+  <Columns cols={3}>
+    <Card title="Feature 1" icon="star" />
+    <Card title="Feature 2" icon="heart" />
+  </Columns>
+  ```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Dark mode toggle with automatic system preference detection
+- `<Tabs>` component for platform-specific instructions
+- Integrated analytics dashboard
+
+## Bug Fixes
+
+- Corrected frontmatter YAML parsing edge cases
+- Fixed responsive issues on mobile devices
+- Patched special character escaping in prose
+
+<Expandable title="Migration Guide" default-open="false">
+
+If upgrading from v1.0.x, update your theme configuration:
+
+```javascript
+// config/theme.js
+export default {
+  colors: {
+    primary: '#3B82F6', // best brand color
+  },
+  darkMode: true,
+};
+```
+
+</Expandable>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core MDX documentation engine with component support
+- `<Steps>` and `<Callout>` for interactive guides
+- Full-text search across all pages
+- Customizable navigation and sidebar
+
+## Breaking Changes
+
+- Removed legacy `<Mermaid>` component syntax (use code blocks only)
+- Updated attribute syntax to require double quotes
+
+## Initial Setup
+
+```bash
+npx create-best-docs my-site
+cd my-site
+npm run dev
+```
+
+</Update>
+
+<Callout kind="tip">
+  Subscribe to the RSS feed at `/changelog.xml` or join the Discord community for instant notifications on new releases.
+</Callout>

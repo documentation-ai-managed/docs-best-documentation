@@ -1,0 +1,123 @@
+---
+title: Configuring Your Documentation Space
+description: Learn how to customize settings, permissions, and integrations for your documentation environment.
+---
+
+## Overview
+
+Customize your best Documentation space to match your team's needs. Adjust themes, manage user access, handle exports, and apply branding like the primary color `#3B82F6`. Start with space settings to set the foundation.
+
+<Columns cols={3}>
+  <Card title="Space Settings" icon="settings" href="#space-settings">
+    Configure themes and default behaviors.
+  </Card>
+  <Card title="User Permissions" icon="users" href="#user-permissions">
+    Define roles for your team.
+  </Card>
+  <Card title="Branding" icon="palette" href="#custom-branding">
+    Apply your colors and logos.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Enable version history in space settings to track changes across your documentation.
+</Callout>
+
+## Space Settings and Themes
+
+Access space settings from the admin panel. Follow these steps to update themes and integrations.
+
+<Steps>
+  <Step title="Navigate to Settings" icon="settings">
+    Click your space name in the top bar, then select `Settings`.
+  </Step>
+  <Step title="Update Theme" icon="palette">
+    Choose a theme or enter custom CSS variables.
+  </Step>
+  <Step title="Save Changes" icon="check">
+    Preview and apply your configuration.
+  </Step>
+</Steps>
+
+Use this JSON configuration for advanced theme customization:
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "theme": {
+      "primaryColor": "#3B82F6",
+      "fontFamily": "Inter, sans-serif"
+    },
+    "integrations": {
+      "analytics": {
+        "enabled": true,
+        "key": "YOUR_ANALYTICS_KEY"
+      }
+    }
+  }
+  ```
+  ```yaml
+  theme:
+    primaryColor: "#3B82F6"
+    fontFamily: Inter, sans-serif
+  integrations:
+    analytics:
+      enabled: true
+      key: YOUR_ANALYTICS_KEY
+  ```
+</CodeGroup>
+
+## User Roles and Permissions
+
+Assign roles to control access. Viewers read content, editors modify pages, and admins manage everything.
+
+| Role     | Read | Edit | Delete | Admin |
+|----------|------|------|--------|-------|
+| Viewer   | ✅   | ❌   | ❌     | ❌    |
+| Editor   | ✅   | ✅   | ❌     | ❌    |
+| Admin    | ✅   | ✅   | ✅     | ✅    |
+
+<Tabs>
+  <Tab title="Add Viewer" icon="eye">
+    Invite users via email and assign the viewer role for read-only access.
+  </Tab>
+  <Tab title="Promote to Editor" icon="edit-3">
+    Select a user and upgrade their role to allow page edits.
+  </Tab>
+  <Tab title="Admin Controls" icon="shield">
+    Admins can export the entire space or revoke access.
+  </Tab>
+</Tabs>
+
+## Export and Import Options
+
+Export your space as Markdown, PDF, or ZIP for backups. Imports support MDX and common formats.
+
+<Expandable title="Export Steps" default-open="true">
+  1. Go to `Settings > Export`.
+  2. Select format: `Markdown` for GitHub, `PDF` for sharing.
+  3. Download the archive.
+
+  Import via `Settings > Import` by uploading files.
+</Expandable>
+
+## Custom Branding
+
+Tailor your space with logos and colors. Set the primary color to `#3B82F6` for consistency.
+
+```css
+:root {
+  --primary-color: #3B82F6;
+  --logo-url: "https://your-domain.com/logo.svg";
+}
+```
+
+<Callout kind="info">
+  Test branding changes in preview mode before publishing to avoid disruptions.
+</Callout>
+
+<ExpandableGroup>
+  <Expandable title="Advanced Integrations">
+    Connect webhooks for notifications. Use `https://your-webhook-url.com/events` as the endpoint.
+  </Expandable>
+</ExpandableGroup>
